@@ -1,0 +1,14 @@
+SELECT
+    Category.category_id,
+    Category.category_name,
+    Product.product_id,
+    Product.product_name,
+    Product.unit_price
+FROM
+    Category
+JOIN
+    Product ON c.category_id = p.category_id
+WHERE
+    Product.unit_price >= 50 AND Product.unit_price <= 150
+ORDER BY
+    Category.category_id, Product.product_id;
